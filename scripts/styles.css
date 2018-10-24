@@ -1,0 +1,24 @@
+#search_section {
+  display: flex;
+  flex-direction: column; 
+}
+
+select {
+  width: 300px;
+}
+
+.show {
+  display: flex;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.search_buttons {
+  display: flex;
+}
+
+button  {
+  margin: 20px;
+}
