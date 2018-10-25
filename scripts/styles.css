@@ -16,6 +16,10 @@ select {
 }
 
 .search_buttons {
+  width: 100px;
+}
+
+.save_buttons {
   display: flex;
 }
 
