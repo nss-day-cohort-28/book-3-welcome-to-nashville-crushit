@@ -11,7 +11,11 @@ foodButton.addEventListener("click", function() {
 
 
 // access the music html locations
-let musicButton = document.getElementById("music_button")
-let musicSelection = document.getElementById("section_music")
+let musicButton = document.getElementById("music_button");
+let musicSelection = document.getElementById("section_music");
 // music selection event listener
-musicButton.addEventListener("click", )
+musicButton.addEventListener("click", function() {
+  let clickValue = musicSelection.options[musicSelection.selectedIndex].value;
+  let musicSearch = musicFinder(clickValue);
+  musicFetch(musicSearch);
+})
