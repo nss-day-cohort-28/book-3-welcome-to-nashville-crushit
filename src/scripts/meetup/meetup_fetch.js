@@ -24,7 +24,7 @@ const meetupSearch = function (eventListenerValue) {
 }
 
 const meetupFetch = function (categoryValue) {
-  fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&categories=${categoryValue}&sort_by=date`, {
+  fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&categories=${categoryValue}&start_date.keyword=today&sort_by=best`, {
   headers: {
     "Authorization": "Bearer BGQCNORPETDNTE2EVJT2"
   }
