@@ -8,3 +8,14 @@ foodButton.addEventListener("click", function() {
   let searchTheFood = foodSearch(clickValue);
   foodFetch(searchTheFood)
 })
+
+// 
+let parkButton = document.getElementById("park_button")
+let parkSelection = document.getElementById("section_park")
+// event lsitener for park submission
+parkButton.addEventListener("click", function() {
+  let clickValue = parkSelection.options 
+  [parkSelection.selectedIndex].value
+  let searchThePark = parkSearch(clickValue);
+  parkFetch(searchThePark)
+})
