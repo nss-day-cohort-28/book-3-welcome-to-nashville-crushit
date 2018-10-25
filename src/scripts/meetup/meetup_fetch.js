@@ -1,5 +1,9 @@
-fetch("https://api.meetup.com/find/upcoming_events?key=8636b7c476c334d163e807e7523575b&lat=36.174465&lon=-86.767960&order=time")
-  .then(meetup => meetup.json())
-  .then(filtered_meetups => {
-    console.table(filtered_meetups)
-  })
+fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&sort_by=date", {
+  headers: {
+    "Authorization": "Bearer BGQCNORPETDNTE2EVJT2"
+  }
+    .then(meetup => meetup.json())
+    .then(filtered_meetups => {
+      console.table(filtered_meetups)
+    })
+})
