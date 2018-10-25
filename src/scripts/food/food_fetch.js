@@ -1,4 +1,4 @@
-// Zomato key:9b3dcdee82f0db292f86f5027fae6fc0
+
 
 // Stores cuisine value in a varable
 const mexican = "73";
