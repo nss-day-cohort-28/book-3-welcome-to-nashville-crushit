@@ -7,7 +7,24 @@ const sports = "108";
 const hobbies = "119";
 const familyEducation = "115";
 
-fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&sort_by=date", {
+const meetupSearch = function (eventListenerValue) {
+  let categoryNumb = ""
+  if (eventListenerValue === "Food_and_Drink") {
+    categoryNumb = foodDrink;
+  } else if (eventListenerValue === "Arts") {
+    categoryNumb = arts;
+  } else if (eventListenerValue === "Sports") {
+    categoryNumb = sports;
+  } else if (eventListenerValue === "Hobbies")  {
+    categoryNumb = hobbies;
+  } else if (eventListenerValue === "Family") {
+    categoryNumb = familyEducation;
+  }
+    return categoryNumb;
+}
+
+const meetupFetch = function (categoryValue) {
+  fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&category_id=${categoryValue}sort_by=date`, {
   headers: {
     "Authorization": "Bearer BGQCNORPETDNTE2EVJT2"
   }
@@ -16,3 +33,4 @@ fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.1744
   .then(filtered_meetups => {
     console.log(filtered_meetups)
   })
+}
