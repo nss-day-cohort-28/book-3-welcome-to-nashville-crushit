@@ -1,14 +1,14 @@
 // Zomato key:9b3dcdee82f0db292f86f5027fae6fc0
 
-// let foodObj = {};
-
-
+// Stores cuisine value in a varable
 const mexican = "73";
 const american = "1";
 const greek = "156";
 const chinese = "25";
 const italian = "55";
 
+
+// Takes the string from my eventlistener and associates it with the correct cuisine number
 const foodSearch = function (eventListenerValue) {
   let cuisineNumb = ""
   if (eventListenerValue === "Mexican") {
@@ -25,7 +25,7 @@ const foodSearch = function (eventListenerValue) {
     return cuisineNumb;
 }
 
-// refactor once eventlistener is created so that food function can live inside this function
+// accepts the value of one of my cusine numbers and inserts it into the fetch url
 const foodFetch = function (cuisineValue) {
 fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&cuisines=${cuisineValue}`, {
   headers: {
@@ -34,7 +34,8 @@ fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=
   }
  }).then(data => data.json())
    .then ( (data) => {
-     console.log(data);
+    let newArray = foodFilter(data);
+    foodArrayLoop(newArray);  
    })
   }
 

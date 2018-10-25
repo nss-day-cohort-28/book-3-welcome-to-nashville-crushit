@@ -10,3 +10,4 @@ let elementBuilder = (data1, data2) => {
       <input type="radio" name="result" value="option">${data1} @ ${data2}
     </div>`;
 }
+
