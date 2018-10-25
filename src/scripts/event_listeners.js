@@ -8,3 +8,10 @@ foodButton.addEventListener("click", function() {
   let searchTheFood = foodSearch(clickValue);
   foodFetch(searchTheFood)
 })
+
+
+// access the music html locations
+let musicButton = document.getElementById("music_button")
+let musicSelection = document.getElementById("section_music")
+// music selection event listener
+musicButton.addEventListener("click", )
