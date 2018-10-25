@@ -5,7 +5,7 @@
 //     })
 
 
-
+// function thats searching for the data from api when specified via button 
 const parkSearch = function (eventListenerValue) {
     let typeofPark = ""
     if (eventListenerValue === "volleyball") {
@@ -13,11 +13,11 @@ const parkSearch = function (eventListenerValue) {
     } else if (eventListenerValue === "golfCourse") {
         typeofPark = "golf_course=Yes"
     } else if (eventListenerValue === "basketballCourts") {
-        typeofPark; "basketball_courts=Yes"
-    } else if (eventListenerValue === "baseballFeilds") {
-        typeofPark = "baseball_feilds=Yes"
-    } else if (eventListenerValue === "footballFeild") {
-        typeofPark = "football_multi_purpose_feilds=Yes"
+        typeofPark = "basketball_courts=Yes"
+    } else if (eventListenerValue === "baseballFields") {
+        typeofPark = "baseball_fields=Yes"
+    } else if (eventListenerValue === "footballFields") {
+        typeofPark = "football_multi_purpose_fields=Yes"
     }
         return typeofPark;
 }
