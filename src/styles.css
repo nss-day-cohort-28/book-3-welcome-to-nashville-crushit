@@ -3,6 +3,12 @@
   flex-direction: column; 
 }
 
+/* #search_radios {
+  display: flex;
+  flex-direction: column;
+} */
+
+
 select {
   width: 300px;
 }
