@@ -4,4 +4,4 @@ let searchResultSpot = document.getElementById("search_radios");
  
 
 // inserts builtElement html into the DOM
-searchResultSpot.insertAdjacentHTML('afterbegin', builtElements);
+let injection = () => searchResultSpot.insertAdjacentHTML('afterbegin', builtElements);
