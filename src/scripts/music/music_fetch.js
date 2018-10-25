@@ -24,13 +24,13 @@ let musicFinder = (selection) => {
   return musicChoice;
 }
 
+console.log(musicFinder("October 30"))
 
 
-
-fetch("https://api.songkick.com/api/3.0/metro_areas/11104/calendar.json?apikey=L3UYuAg36GRifLaf&${musicChoice}") // Fetch from the API
-    .then(entry => entry.json())  // Parse as JSON
-    .then(entries => {
-      createJournalEntry(entries)
-        // What should happen when we finally have the array?
-      addJournalEntry(entries)
-    })
+// fetch(`https://api.songkick.com/api/3.0/metro_areas/11104/calendar.json?apikey=L3UYuAg36GRifLaf&${}`) // Fetch from the API
+//     .then(choice => choice.json())  // Parse as JSON
+//     .then(entries => {
+//       x(y)
+//         // What happens when we have the array
+//       x(y)
+//     })
