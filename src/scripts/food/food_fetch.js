@@ -9,6 +9,8 @@ const greek = "156";
 const chinese = "25";
 const italian = "55";
 
+const today = "2018-10-29"
+
 const foodSearch = function (eventListenerValue) {
   let cuisineNumb = ""
   if (eventListenerValue === "Mexican") {
@@ -34,7 +36,8 @@ fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=
   }
  }).then(data => data.json())
    .then ( (data) => {
-     console.log(data);
+    let newArray = foodFilter(data);
+    foodArrayLoop(newArray);  
    })
   }
 
