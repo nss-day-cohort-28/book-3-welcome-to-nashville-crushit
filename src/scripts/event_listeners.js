@@ -8,8 +8,7 @@ foodButton.addEventListener("click", function() {
   foodFetch(searchTheFood)
   // hides searchsection
   hideSearch();
- 
-})
+ })
 
 // grabs the spots needed in html for food
 let parkButton = document.getElementById("park_button")
@@ -48,5 +47,36 @@ meetupButton.addEventListener("click", function() {
 })
 
 
+// decides what key in json gets updated
+let radbut = document.getElementById("button_save")
+let bigObj = {}
+radbut.addEventListener("click", function () {
+  let radioCheck = document.querySelector('input[name="result"]:checked').value;
+  let radioClass = document.querySelector('input[name="result"]:checked').className;
+  if (radioClass === "music") {
+    bigObj.music = radioCheck
+  } else if (radioClass === "meetup") {
+    bigObj.meetup = radioCheck
+  } else if (radioClass === "park") {
+    bigObj.park = radioCheck
+  } else if (radioClass === "food") {
+    bigObj.food = radioCheck
+  }
+  localJson(bigObj);
+  window.location.reload();
+})
 
+
+// Clear out our itinerary
+let clearButton = document.getElementById("button_clear");
+clearButton.addEventListener("click", function () {
+  let clearObj = {
+    music: "",
+    park: "",
+    meetup: "",
+    food: "",
+    }
+  localJson(clearObj);
+  window.location.reload();
+})
 
