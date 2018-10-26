@@ -1,4 +1,3 @@
-
 // grabs the spots needed in html for food
 let foodButton = document.getElementById("food_button")
 let foodSelection = document.getElementById("section_food");
@@ -7,6 +6,9 @@ foodButton.addEventListener("click", function() {
   let clickValue = foodSelection.options[foodSelection.selectedIndex].value
   let searchTheFood = foodSearch(clickValue);
   foodFetch(searchTheFood)
+  // hides searchsection
+  hideSearch();
+ 
 })
 
 // grabs the spots needed in html for food
@@ -18,6 +20,7 @@ parkButton.addEventListener("click", function() {
   [parkSelection.selectedIndex].value
   let searchThePark = parkSearch(clickValue);
   parkFetch(searchThePark)
+  hideSearch();
 })
 
 // access the music html locations
@@ -30,6 +33,7 @@ musicButton.addEventListener("click", function() {
 
   let musicSearch = musicFinder(clickValue);
   musicFetch(musicSearch);
+  hideSearch();
 })
 
 // grabs the spots needed in html for meetups
@@ -40,4 +44,9 @@ meetupButton.addEventListener("click", function() {
   let clickValue = meetupSelection.options[meetupSelection.selectedIndex].value;
   let searchMeetups = meetupSearch(clickValue);
   meetupFetch(searchMeetups)
+  hideSearch();
 })
+
+
+
+
