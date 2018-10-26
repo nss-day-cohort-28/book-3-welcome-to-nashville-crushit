@@ -19,6 +19,19 @@ parkButton.addEventListener("click", function() {
   let searchThePark = parkSearch(clickValue);
   parkFetch(searchThePark)
 })
+
+// access the music html locations
+let musicButton = document.getElementById("music_button");
+let musicSelection = document.getElementById("section_music");
+// music selection event listener
+musicButton.addEventListener("click", function() {
+  // assigns user's date selection
+  let clickValue = musicSelection.options[musicSelection.selectedIndex].value;
+
+  let musicSearch = musicFinder(clickValue);
+  musicFetch(musicSearch);
+})
+
 // grabs the spots needed in html for meetups
 let meetupButton = document.getElementById("meetup_button");
 let meetupSelection = document.getElementById("section_meetup");
