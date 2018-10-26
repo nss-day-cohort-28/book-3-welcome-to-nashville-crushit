@@ -12,8 +12,9 @@ let musicEventLoop = (array) => {
     let venue = array[i].venue.displayName;
     elementBuilder(artist, venue);
   }
+  // inject music info into the DOM
+  injection();
 }
-
 
 
 
