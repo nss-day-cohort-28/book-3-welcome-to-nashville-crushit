@@ -23,7 +23,6 @@ const meetupSearch = function (eventListenerValue) {
     return categoryNumb;
 }
 
-let eventNames = [];
 let events = [];
 const meetupFetch = function (categoryValue) {
 fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&categories=${categoryValue}&start_date.keyword=today&sort_by=best`, {
