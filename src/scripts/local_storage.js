@@ -21,13 +21,3 @@ fetch(`http://localhost:8088/my_itinerary`, {
     .then((data) => {
       findItinerary.insertAdjacentHTML('beforeend',itineraryBuilder(data));
     })
-
-
-
-// const localJson = function () {
-//   fetch(`http://localhost:8088/my_itinerary`, {
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify
