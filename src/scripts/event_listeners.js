@@ -15,7 +15,9 @@ let musicButton = document.getElementById("music_button");
 let musicSelection = document.getElementById("section_music");
 // music selection event listener
 musicButton.addEventListener("click", function() {
+  // assigns user's date selection
   let clickValue = musicSelection.options[musicSelection.selectedIndex].value;
+
   let musicSearch = musicFinder(clickValue);
   musicFetch(musicSearch);
 })

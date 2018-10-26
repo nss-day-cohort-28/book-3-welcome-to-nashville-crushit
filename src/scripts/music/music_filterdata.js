@@ -1,9 +1,19 @@
 
+// filter down the received object into desired event array
+let musicFilter = (musicObject) => {
+  let eventArray = musicObject.resultsPage.results.event;
+  return eventArray
+}
 
-// for (i=0; i<5; i++) {
 
+let musicEventLoop = (array) => {
+  for (i=0; i<5; i++) {
+    let artist = array[i].performance[0].displayName;
+    let venue = array[i].venue.displayName;
+    elementBuilder(artist, venue);
+  }
+}
 
-// }
 
 
 

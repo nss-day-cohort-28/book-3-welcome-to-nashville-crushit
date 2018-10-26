@@ -27,8 +27,9 @@ let musicFinder = (selection) => {
 
 let musicFetch = (musicValue) => {
   fetch(`https://api.songkick.com/api/3.0/metro_areas/11104/calendar.json?apikey=L3UYuAg36GRifLaf&${musicValue}`) // Fetch from the API
-      .then(thing => thing.json())  // Parse as JSON
-      .then(parsedThing => {
-        console.log(parsedThing)
+      .then(info => info.json())  // Parse as JSON
+      .then(parsedinfo => {
+        let eventArray = musicFilter(parsedinfo);
+        musicEventLoop(eventArray)
      })
 }
