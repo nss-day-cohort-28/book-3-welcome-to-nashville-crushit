@@ -56,7 +56,10 @@ radbut.addEventListener("click", function () {
   if (radioClass === "music") {
     bigObj.music = radioCheck
   } else if (radioClass === "meetup") {
-    bigObj.meetup = radioCheck
+    let radioValue = radioCheck.split("&")
+    console.log(radioValue)
+    bigObj.meetup = radioValue[0]
+    bigObj.meetup_url = radioValue[1]
   } else if (radioClass === "park") {
     bigObj.park = radioCheck
   } else if (radioClass === "food") {
