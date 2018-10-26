@@ -31,6 +31,14 @@ const parkFetch = function (parkValue) {
     })
         .then(data => data.json())
         .then((data) => {
+            data.forEach( (obj) => {
+                let parkAddress = obj.mapped_location_address;
+                let parkName = obj.park_name;
+                console.log(parkAddress, parkName);
+            })
             console.log(data);
         })
 }
+// "mapped_location_address"
+//  "park_name" 
+// building dom element
