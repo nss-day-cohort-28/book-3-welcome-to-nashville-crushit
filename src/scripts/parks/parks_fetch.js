@@ -1,10 +1,3 @@
-// fetch('https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=T7zn5kO3GnGyvLhoGQjL1b2EN')
-//     .then(data => data.json())
-//     .then ( (data)=> {
-//         console.table(data);
-//     })
-
-
 // function thats searching for the data from api when specified via button 
 const parkSearch = function (eventListenerValue) {
     let typeofPark = ""
@@ -19,9 +12,9 @@ const parkSearch = function (eventListenerValue) {
     } else if (eventListenerValue === "footballFields") {
         typeofPark = "football_multi_purpose_fields=Yes"
     }
-        return typeofPark;
+    return typeofPark;
 }
-
+let parks = [];
 const parkFetch = function (parkValue) {
     fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${parkValue}`, {
         headers: {
@@ -29,8 +22,8 @@ const parkFetch = function (parkValue) {
             "X-App-Token": "T7zn5kO3GnGyvLhoGQjL1b2EN"
         }
     })
-        .then(data => data.json())
-        .then((data) => {
-            console.log(data);
+        .then(parkData => parkData.json())
+        .then(parkData => {
+            getParkName(parkData)
         })
 }
