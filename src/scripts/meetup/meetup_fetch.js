@@ -35,7 +35,6 @@ headers: {
 .then(eventdata => eventdata.events)
 .then(event => {
   events.push(event);
-  console.log("event", event)
   events.forEach(eventar => accessEventName(eventar))
 })
 }
@@ -49,7 +48,6 @@ function accessEventName (eventar)  {
     let newNames = eventar[i].name.text;
     let newURL = eventar[i].url;
     elementBuilder(newNames, newURL);
-    console.log(builtElements)
   }
   injection();
 }
