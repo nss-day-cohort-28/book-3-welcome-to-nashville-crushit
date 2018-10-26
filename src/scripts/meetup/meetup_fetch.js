@@ -32,8 +32,8 @@ headers: {
 }
 })
 .then(eventdata => eventdata.json())
-.then((eventdata) => eventdata.events)
-.then((event) => {
+.then(eventdata => eventdata.events)
+.then(event => {
   events.push(event);
   events.forEach(eventar => accessEventName(eventar))
 })
