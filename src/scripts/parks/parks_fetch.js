@@ -19,9 +19,10 @@ const parkSearch = function (eventListenerValue) {
     } else if (eventListenerValue === "footballFields") {
         typeofPark = "football_multi_purpose_fields=Yes"
     }
-        return typeofPark;
+    return typeofPark;
 }
-
+let parkNames = [];
+let parks = [];
 const parkFetch = function (parkValue) {
     fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${parkValue}`, {
         headers: {
@@ -29,16 +30,26 @@ const parkFetch = function (parkValue) {
             "X-App-Token": "T7zn5kO3GnGyvLhoGQjL1b2EN"
         }
     })
-        .then(data => data.json())
-        .then((data) => {
-            data.forEach( (obj) => {
-                let parkAddress = obj.mapped_location_address;
-                let parkName = obj.park_name;
-                elementBuilder(parkName, parkAddress, "park")
-            })
-            injection();
+        .then(parkData => parkData.json())
+        .then(parkData => parkData.park)
+        .then(park => {
+            parks.push(park);
+            parks.forEach(parkar => getParkName(parkar))
         })
 }
-// "mapped_location_address"
-//  "park_name" 
-// building dom element
+// Built element for dom
+function getParkName(pakrar) {
+    for (let i = 0; i < 5 && i < parkar.length; i++) {
+        let parkAddress = obj.mapped_location_address;
+        let parkName = obj.park_name;
+        elementBuilder(parkName, parkAddress, "park");
+    }
+    injection();
+}
+
+
+// data.forEach((obj) => {
+//     let parkAddress = obj.mapped_location_address;
+//     let parkName = obj.park_name;
+//     elementBuilder(parkName, parkAddress, "park")
+// })
