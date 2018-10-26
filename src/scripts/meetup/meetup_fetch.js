@@ -47,7 +47,7 @@ function accessEventName (eventar)  {
   for(let i = 0; i < 5 && i < eventar.length; i++) {
     let newNames = eventar[i].name.text;
     let newURL = eventar[i].url;
-    elementBuilder(newNames, newURL);
+    elementBuilder(newNames, newURL, "meetup");
   }
   injection();
 }
