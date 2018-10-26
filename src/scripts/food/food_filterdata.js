@@ -10,7 +10,7 @@ const foodArrayLoop = (newArray) => {
     let restName = newArray[i].restaurant.name;
     let restLocation = newArray[i].restaurant.location.address;
     // insert name and location into our build component
-    elementBuilder(restName, restLocation);
+    elementBuilder(restName, restLocation, "food");
   }
   // inject our build component into the dom
   injection();
