@@ -9,6 +9,16 @@ foodButton.addEventListener("click", function() {
   foodFetch(searchTheFood)
 })
 
+// grabs the spots needed in html for food
+let parkButton = document.getElementById("park_button")
+let parkSelection = document.getElementById("section_park")
+// event lsitener for park submission
+parkButton.addEventListener("click", function() {
+  let clickValue = parkSelection.options 
+  [parkSelection.selectedIndex].value
+  let searchThePark = parkSearch(clickValue);
+  parkFetch(searchThePark)
+})
 
 // access the music html locations
 let musicButton = document.getElementById("music_button");
