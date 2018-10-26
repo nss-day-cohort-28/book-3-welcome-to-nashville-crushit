@@ -11,7 +11,13 @@ const parkSearch = function (eventListenerValue) {
         typeofPark = "baseball_fields=Yes"
     } else if (eventListenerValue === "footballFields") {
         typeofPark = "football_multi_purpose_fields=Yes"
-    }
+    } else if (eventListenerValue = "natureCenters") {
+        typeofPark = "nature_center=Yes"
+    }   else if (eventListenerValue = "dogParks") {
+        typeofPark = "dog_park=Yes"
+    } else if (eventListenerValue = "lakes") {
+        typeofPark = "lake=Yes"
+    }   
     return typeofPark;
 }
 let parks = [];
