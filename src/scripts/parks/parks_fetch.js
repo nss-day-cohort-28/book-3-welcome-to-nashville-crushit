@@ -1,10 +1,3 @@
-// fetch('https://data.nashville.gov/resource/xbru-cfzi.json?$$app_token=T7zn5kO3GnGyvLhoGQjL1b2EN')
-//     .then(data => data.json())
-//     .then ( (data)=> {
-//         console.table(data);
-//     })
-
-
 // function thats searching for the data from api when specified via button 
 const parkSearch = function (eventListenerValue) {
     let typeofPark = ""
@@ -21,7 +14,6 @@ const parkSearch = function (eventListenerValue) {
     }
     return typeofPark;
 }
-let parkNames = [];
 let parks = [];
 const parkFetch = function (parkValue) {
     fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${parkValue}`, {
@@ -31,25 +23,17 @@ const parkFetch = function (parkValue) {
         }
     })
         .then(parkData => parkData.json())
-        .then(parkData => parkData.park)
-        .then(park => {
-            parks.push(park);
-            parks.forEach(parkar => getParkName(parkar))
+        .then(parkData => {
+            console.log("parkdata", parkData);
+            getParkName(parkData)
         })
 }
 // Built element for dom
-function getParkName(pakrar) {
+const getParkName = function (parkar) {
     for (let i = 0; i < 5 && i < parkar.length; i++) {
-        let parkAddress = obj.mapped_location_address;
-        let parkName = obj.park_name;
+        let parkAddress = parkar[i].mapped_location_address;
+        let parkName = parkar[i].park_name;
         elementBuilder(parkName, parkAddress, "park");
     }
     injection();
 }
-
-
-// data.forEach((obj) => {
-//     let parkAddress = obj.mapped_location_address;
-//     let parkName = obj.park_name;
-//     elementBuilder(parkName, parkAddress, "park")
-// })
