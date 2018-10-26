@@ -7,7 +7,7 @@ let builtElements = "";
 let elementBuilder = (data1, data2, newClass) => {
   builtElements +=
    `<div class = "radio">
-      <input class=${newClass} type="radio" name="result" value="option">${data1} @ ${data2}
+      <input class=${newClass} type="radio" name="result" value="${data1} @ ${data2}">${data1} @ ${data2}
     </div>`;
 }
 

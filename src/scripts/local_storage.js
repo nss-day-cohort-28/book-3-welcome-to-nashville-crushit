@@ -21,3 +21,23 @@ fetch(`http://localhost:8088/my_itinerary`, {
     .then((data) => {
       findItinerary.insertAdjacentHTML('beforeend',itineraryBuilder(data));
     })
+
+
+
+let radbut = document.getElementById("button_save")
+
+radbut.addEventListener("click", function () {
+  let radioCheck = document.querySelector('input[name="result"]:checked').value;
+  let radioClass = document.querySelector('input[name="result"]:checked').className;
+  console.log(radioCheck)
+  console.log(radioClass)
+})
+
+// fetch(`http://localhost:8088/my_itinerary`, {
+//   headers: {
+//     "Content-Type": "application/json",
+//   }
+// }).then(data => data.json())
+// .then((data) => {
+//   findItinerary.insertAdjacentHTML('beforeend',itineraryBuilder(data));
+// })
