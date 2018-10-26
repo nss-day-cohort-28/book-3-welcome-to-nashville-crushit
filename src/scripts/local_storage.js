@@ -26,7 +26,7 @@ fetch(`http://localhost:8088/my_itinerary`, {
 
 // const localJson = function () {
 //   fetch(`http://localhost:8088/my_itinerary`, {
-//       method: "POST",
+//       method: "PATCH",
 //       headers: {
 //         "Content-Type": "application/json",
 //       },
