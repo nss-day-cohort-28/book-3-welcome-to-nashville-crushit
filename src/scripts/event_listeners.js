@@ -20,6 +20,7 @@ parkButton.addEventListener("click", function() {
   [parkSelection.selectedIndex].value
   let searchThePark = parkSearch(clickValue);
   parkFetch(searchThePark)
+  hideSearch();
 })
 
 // access the music html locations
