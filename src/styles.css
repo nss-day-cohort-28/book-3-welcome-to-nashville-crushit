@@ -1,6 +1,11 @@
-#search_section {
+/* #search_section {
   display: flex;
   flex-direction: column; 
+} */
+
+.search_section {
+  display: flex;
+  flex-direction: column;
 }
 
 select {
@@ -8,11 +13,11 @@ select {
 }
 
 .show {
-  display: flex;
+  display: block;
 }
 
 .hidden {
-  display: hidden;
+  display: none;
 }
 
 .save_buttons {
@@ -23,3 +28,5 @@ button  {
   margin: 20px;
   width: 100px;
 }
+
+

@@ -1,4 +1,30 @@
 
+// Varables that grab our 3 sections
+let searchSection = document.getElementById("search_section");
+let resultsSection = document.getElementById("search_results")
+let itinerarySection = document.getElementById("itinerary");
+
+// hides search section when search button is clicked. and reveals the results section
+let hideSearch = function() {
+  searchSection.className = "hidden"
+  resultsSection.className = "show"
+}
+
+// brings back the search section and hides the results
+let returnSearch = function() {
+  searchSection.className = "search_section show"
+  resultsSection.className = "hidden"
+}
+
+// back button
+let backButtonMagic = document.getElementById("button_back");
+
+// back button actually refreshes the browser to clear our dom of searches
+backButtonMagic.addEventListener("click", function() {
+   window.location.reload();
+})
+
+
 // grabs the spots needed in html for food
 let foodButton = document.getElementById("food_button")
 let foodSelection = document.getElementById("section_food");
@@ -7,6 +33,9 @@ foodButton.addEventListener("click", function() {
   let clickValue = foodSelection.options[foodSelection.selectedIndex].value
   let searchTheFood = foodSearch(clickValue);
   foodFetch(searchTheFood)
+  // hides searchsection
+  hideSearch();
+ 
 })
 
 // grabs the spots needed in html for meetups
@@ -18,3 +47,7 @@ meetupButton.addEventListener("click", function() {
   let searchMeetups = meetupSearch(clickValue);
   meetupFetch(searchMeetups)
 })
+
+
+
+
