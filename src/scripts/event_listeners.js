@@ -9,7 +9,7 @@ foodButton.addEventListener("click", function() {
   foodFetch(searchTheFood)
 })
 
-// 
+// grabs the spots needed in html for food
 let parkButton = document.getElementById("park_button")
 let parkSelection = document.getElementById("section_park")
 // event lsitener for park submission
