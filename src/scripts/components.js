@@ -11,3 +11,12 @@ let elementBuilder = (data1, data2, newClass) => {
     </div>`;
 }
 
+// function to create itinerary div
+let itineraryBuilder = (jsonObj) => {
+  return `<div class = "inserted">
+    <h3>Music: ${jsonObj.music}</h3>
+    <h3>Park: ${jsonObj.park}</h3>
+    <h3>Meetup: ${jsonObj.meetup}</h3>
+    <h3>Food: ${jsonObj.food}</h3>
+  </div>`;
+}
