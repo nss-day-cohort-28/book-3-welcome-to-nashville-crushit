@@ -7,10 +7,17 @@ let musicFilter = (musicObject) => {
 
 
 let musicEventLoop = (array) => {
+  if (array === undefined) {
+    builtElements +=
+    `<div>
+      There are no upcoming concerts listed for this date! 
+     </div>`;
+  } else {
   for (i=0; i<5; i++) {
     let artist = array[i].performance[0].displayName;
     let venue = array[i].venue.displayName;
     elementBuilder(artist, venue, "music");
+    }
   }
   // inject music info into the DOM
   injection();
