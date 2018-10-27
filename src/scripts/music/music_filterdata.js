@@ -15,7 +15,7 @@ let musicEventLoop = (array) => {
   } else {
   for (i=0; i<5; i++) {
     let artist = array[i].performance[0].displayName;
-    let venue = array[i].venue.displayName;
+    let venue = array[i].venue.displayName + " " + document.getElementById("section_music").value;
     elementBuilder(artist, venue, "music");
     }
   }
