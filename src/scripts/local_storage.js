@@ -8,7 +8,7 @@ let mainFetch = function () {
       }
     }).then(data => data.json())
     .then((data) => {
-      injectItinerary(data)
+      injectItinerary(data);
       jsonFact = data;
       buildSavedItineray(jsonFact);
     })
@@ -28,6 +28,7 @@ const localJson = function (data) {
   })
 }
 
+// saves an itinerary 
 const postJson = (data) => {
   fetch(`http://localhost:8088/my_itinerary`, {
     method: "POST",
@@ -37,3 +38,15 @@ const postJson = (data) => {
     body: JSON.stringify(data)
   })
 }
+
+const viewSavedJson = (numb) => {
+  fetch(`http://localhost:8088/my_itinerary/${numb}`, {
+    headers: {
+      "Content-Type": "application/json",
+    }
+  }).then(data => data.json())
+  .then((converteddata) => {
+    console.log(converteddata)
+    recallSavedItinerary(converteddata)
+  
+})}

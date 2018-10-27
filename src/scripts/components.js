@@ -40,6 +40,24 @@ let itineraryBuilder = (jsonObj) => {
   return itinDiv;
 }
 
+let savedInsertSpot = document.getElementById("saved_itinerary");
+let savedSpot = document.getElementById("select_itinerary")
+let savedItineraryDivClear = () => {
+  savedInsertSpot.innerHTML = null;
+}
+
+let savedItineraryBuilder = (jsonObj) => {
+  savedItineraryDivClear()
+  let itinDiv = `<div class = "inserted">
+    <h3 id = "itinerary_music">Music: ${jsonObj.music}</h3>
+    <h3 id = "itinerary_park">Park: ${jsonObj.park}</h3>
+    <h3 id = "itinerary_meetup">Meetup: ${jsonObj.meetup}</h3>
+    <h3 id = "itinerary_food">Food: ${jsonObj.food}</h3>
+  </div>`;
+  console.log(itinDiv)
+  return itinDiv;
+}
+
 let buildSavedItineray = (jsonFact) => {
   let newoption;
   jsonFact.forEach((loop) => {
@@ -48,6 +66,6 @@ let buildSavedItineray = (jsonFact) => {
     }
   })
   
-  document.getElementById("select_itinerary").insertAdjacentHTML('beforeend', newoption);
+  savedSpot.insertAdjacentHTML('beforeend', newoption);
   
 }

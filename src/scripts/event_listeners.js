@@ -121,5 +121,5 @@ let viewButton = document.getElementById("button_view");
 
 viewButton.addEventListener("click", () =>{
   let clickValue = savedTarget.options[savedTarget.selectedIndex].value
-  console.log(clickValue)
+  viewSavedJson(clickValue);
 })
