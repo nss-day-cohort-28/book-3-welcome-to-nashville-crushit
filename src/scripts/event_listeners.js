@@ -93,6 +93,7 @@ clearButton.addEventListener("click", () => {
     park: "",
     meetup: "",
     food: "",
+    meetup_url: ""
     }
   localJson(clearObj);
   buildClear()
@@ -100,28 +101,17 @@ clearButton.addEventListener("click", () => {
 })
 
 
-
+// Save Button now post a new itinerary to json
 let saveItinButton = document.getElementById("button_itinerary_save");
 
-const saveThisIt = function(jsonObj) {saveItinButton.addEventListener("click", () => {
+saveItinButton.addEventListener("click", () => {
    let saveObj = {
-    music: jsonObj[0].music,
-    park: jsonObj[0].park,
-    meetup: jsonObj[0].meetup,
-    food: jsonObj[0].food,
+    music: jsonFact[0].music,
+    park: jsonFact[0].park,
+    meetup: jsonFact[0].meetup,
+    food: jsonFact[0].food,
+    meetup_url: jsonFact[0].meetup_url,
     name: document.getElementById("itinerary_name").value
     }
-  console.log(saveObj);
-})}
-
-
-// saveItinButton.addEventListener("click", () => {
-//   let saveObj = {
-//     music: document.getElementById("itinerary_music").innerText,
-//     park: document.getElementById("itinerary_park").innerText,
-//     meetup: document.getElementById("itinerary_meetup").innerText,
-//     food: document.getElementById("itinerary_food").innerText,
-//     name: document.getElementById("itinerary_name").value
-//     }
-//   console.log(saveObj);
-// })
+  postJson(saveObj);
+})
