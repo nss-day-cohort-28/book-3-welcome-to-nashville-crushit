@@ -115,3 +115,11 @@ saveItinButton.addEventListener("click", () => {
     }
   postJson(saveObj);
 })
+
+let savedTarget = document.getElementById("select_itinerary");
+let viewButton = document.getElementById("button_view");
+
+viewButton.addEventListener("click", () =>{
+  let clickValue = savedTarget.options[savedTarget.selectedIndex].value
+  console.log(clickValue)
+})
