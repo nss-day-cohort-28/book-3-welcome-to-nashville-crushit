@@ -10,8 +10,10 @@ let mainFetch = function () {
     .then((data) => {
       injectItinerary(data)
       jsonFact = data;
+      buildSavedItineray(jsonFact);
     })
 }
+
 
 
 mainFetch()

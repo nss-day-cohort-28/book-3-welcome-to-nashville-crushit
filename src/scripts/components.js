@@ -39,3 +39,14 @@ let itineraryBuilder = (jsonObj) => {
   </div>`;
   return itinDiv;
 }
+
+let buildSavedItineray = (jsonFact) => {
+  let newoption;
+  jsonFact.forEach((loop) => {
+    if(loop.name !== "") {
+      newoption += `<option>${loop.name}</option>`
+    }
+  })
+  
+  document.getElementById("select_itinerary").insertAdjacentHTML('beforeend', newoption);
+}
