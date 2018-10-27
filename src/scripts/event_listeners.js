@@ -87,7 +87,7 @@ backButtonMagic.addEventListener("click", function() {
 // ___________________Itinerary Buttons___________________
 // CLEAR BUTTON: Clear out our itinerary
 let clearButton = document.getElementById("button_clear");
-clearButton.addEventListener("click", function () {
+clearButton.addEventListener("click", () => {
   let clearObj = {
     music: "",
     park: "",
@@ -99,3 +99,29 @@ clearButton.addEventListener("click", function () {
   mainFetch()
 })
 
+
+
+let saveItinButton = document.getElementById("button_itinerary_save");
+
+const saveThisIt = function(jsonObj) {saveItinButton.addEventListener("click", () => {
+   let saveObj = {
+    music: jsonObj[0].music,
+    park: jsonObj[0].park,
+    meetup: jsonObj[0].meetup,
+    food: jsonObj[0].food,
+    name: document.getElementById("itinerary_name").value
+    }
+  console.log(saveObj);
+})}
+
+
+// saveItinButton.addEventListener("click", () => {
+//   let saveObj = {
+//     music: document.getElementById("itinerary_music").innerText,
+//     park: document.getElementById("itinerary_park").innerText,
+//     meetup: document.getElementById("itinerary_meetup").innerText,
+//     food: document.getElementById("itinerary_food").innerText,
+//     name: document.getElementById("itinerary_name").value
+//     }
+//   console.log(saveObj);
+// })

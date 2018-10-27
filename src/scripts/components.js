@@ -32,10 +32,10 @@ let itineraryDivClear = () => {
 let itineraryBuilder = (jsonObj) => {
   itineraryDivClear();
   let itinDiv = `<div class = "inserted">
-    <h3>Music: ${jsonObj.music}</h3>
-    <h3>Park: ${jsonObj.park}</h3>
-    <h3>Meetup: ${jsonObj.meetup}</h3>
-    <h3>Food: ${jsonObj.food}</h3>
+    <h3 id = "itinerary_music">Music: ${jsonObj[0].music}</h3>
+    <h3 id = "itinerary_park">Park: ${jsonObj[0].park}</h3>
+    <h3 id = "itinerary_meetup">Meetup: ${jsonObj[0].meetup}</h3>
+    <h3 id = "itinerary_food">Food: ${jsonObj[0].food}</h3>
   </div>`;
   return itinDiv;
 }
