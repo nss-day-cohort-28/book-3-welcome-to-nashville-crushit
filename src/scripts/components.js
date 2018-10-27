@@ -7,14 +7,14 @@ let searchResultSpot = document.getElementById("search_radios");
 let builtElements = "";
 
 // Resets builtElement to empty and clears inner HTML of the target div for search results
-let buildClear = () => { 
+let buildClear = () => {
   builtElements = "";
   searchResultSpot.innerHTML = null;
 }
 // Builds divs of results
 let elementBuilder = (data1, data2, newClass) => {
-    builtElements +=
-   `<div class = "radio">
+  builtElements +=
+    `<div class = "radio">
       <input class=${newClass} type="radio" name="result" value="${data1} @ ${data2}">${data1} @ ${data2}
     </div>`;
 }
@@ -40,12 +40,15 @@ let itineraryBuilder = (jsonObj) => {
   return itinDiv;
 }
 
+
+// _____________Saved Itinerary Builder__________________________
 let savedInsertSpot = document.getElementById("saved_itinerary");
 let savedSpot = document.getElementById("select_itinerary")
 let savedItineraryDivClear = () => {
   savedInsertSpot.innerHTML = null;
 }
 
+// builds itinerary on page
 let savedItineraryBuilder = (jsonObj) => {
   savedItineraryDivClear()
   let itinDiv = `<div class = "inserted">
@@ -54,18 +57,17 @@ let savedItineraryBuilder = (jsonObj) => {
     <h3 id = "itinerary_meetup">Meetup: ${jsonObj.meetup}</h3>
     <h3 id = "itinerary_food">Food: ${jsonObj.food}</h3>
   </div>`;
-  console.log(itinDiv)
   return itinDiv;
 }
 
+// Builds selection drop down
 let buildSavedItineray = (jsonFact) => {
   let newoption;
+  savedSpot.innerHTML = null;
   jsonFact.forEach((loop) => {
-    if(loop.name !== "") {
+    if (loop.name !== "") {
       newoption += `<option value=${loop.id}>${loop.name}</option>`
     }
   })
-  
   savedSpot.insertAdjacentHTML('beforeend', newoption);
-  
 }

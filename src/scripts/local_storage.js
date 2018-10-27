@@ -39,6 +39,8 @@ const postJson = (data) => {
   })
 }
 
+
+// pulls saved itinerary 
 const viewSavedJson = (numb) => {
   fetch(`http://localhost:8088/my_itinerary/${numb}`, {
     headers: {
@@ -46,7 +48,6 @@ const viewSavedJson = (numb) => {
     }
   }).then(data => data.json())
   .then((converteddata) => {
-    console.log(converteddata)
-    recallSavedItinerary(converteddata)
+  recallSavedItinerary(converteddata)
   
 })}
