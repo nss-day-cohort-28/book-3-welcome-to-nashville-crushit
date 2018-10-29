@@ -3,10 +3,10 @@ function accessEventInfo(eventar)  {
   if (eventar.length === 0) {
     alert("No events of that type today. Search again.")
   } else
-  for(let i = 0; i < 5 && i < eventar.length; i++) {
-    let newNames = eventar[i].name.text;
-    let newURL = eventar[i].url;
-    elementBuilder(newNames, newURL, "meetup");
-  }
+    for(let i = 0; i < 5 && i < eventar.length; i++) {
+      let newNames = eventar[i].name.text;
+      let newURL = eventar[i].url;
+      elementBuilder(newNames, newURL, "meetup");
+    }
   injection();
 }

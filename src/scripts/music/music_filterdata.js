@@ -7,11 +7,14 @@ let musicFilter = (musicObject) => {
 
 
 let musicEventLoop = (array) => {
-  for (i=0; i<5; i++) {
-    let artist = array[i].performance[0].displayName;
-    let venue = array[i].venue.displayName;
-    elementBuilder(artist, venue, "music");
-  }
+  if (array.length === 0) {
+    alert("No events meet your criteria. Search again.")
+  } else
+    for (i=0; i<5; i++) {
+      let artist = array[i].performance[0].displayName;
+      let venue = array[i].venue.displayName;
+      elementBuilder(artist, venue, "music");
+    }
   // inject music info into the DOM
   injection();
 }
