@@ -10,11 +10,11 @@ let musicEventLoop = (array) => {
   if (array === undefined) {
     builtElements +=
     `<div>
-      There are no upcoming concerts listed for this date! 
+      There are no upcoming concerts listed for this date!
      </div>`;
   } else {
   buildClear();
-  for (i=0; i<5; i++) {
+  for (i=0; i<5 && i<array.length; i++) {
     let artist = array[i].performance[0].displayName;
     let venue = array[i].venue.displayName + " " + document.getElementById("section_music").value;
     elementBuilder(artist, venue, "music");
