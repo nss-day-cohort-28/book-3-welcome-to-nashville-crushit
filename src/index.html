@@ -13,15 +13,9 @@
 <body>
   <h1>Welcome to Nashville</h1>
   <div class="div_body">
-    <div id="search_section" class="search_section show">
-      <h3>Music</h3>
-      <select id="section_music">
-        <option value="October 29">October 29</option>
-        <option value="October 30">October 30</option>
-      <option value="October 31">October 31</option>
-      <option value="November 1">November 1</option>
-      <option value="November 2">November 2</option>
-    </select>
+  <div id="search_section" class="search_section show">
+    <h3>Music</h3>
+    <input type="date" id="section_music" />
     <button id="music_button">Search</button>
     
     <h3>Park</h3>
@@ -62,7 +56,7 @@
     <h2>Select:</h2>
     <div id="search_radios">
     </div>
-    
+
     <div id="search_buttons">
     </div>
     <button id="button_save">Save</button>
@@ -74,13 +68,26 @@
 
   <div id="itinerary" class="show">
     <h2>My Itinerary</h2>
+    <input id = "itinerary_name" type ="text" name = "Itinerary Name Submit" value = "Name Your Itinerary">
     <div id="itinerary_target">
     </div>
+    <button id="button_itinerary_save">Save</button>
     <button id="button_clear">Clear</button>
   </div>
 </div>
   
 </div>
+
+  <div>
+    <h2>Saved Itineraries</h2>
+    
+    <select id="select_itinerary">
+       
+    </select>
+    <button id = "button_view">View</button>
+    <div id="saved_itinerary"></div>
+   
+  </div>
 
   <script src="scripts/parks/parks_filterdata.js"></script>
   <script src="scripts/parks/parks_fetch.js"></script>

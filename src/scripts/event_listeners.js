@@ -33,7 +33,8 @@ let musicSelection = document.getElementById("section_music");
 // music selection event listener
 musicButton.addEventListener("click", function() {
   // assigns user's date selection
-  let clickValue = musicSelection.options[musicSelection.selectedIndex].value;
+  let clickValue = musicSelection.value;
+
   let musicSearch = musicFinder(clickValue);
   musicFetch(musicSearch);
   hideSearch();
@@ -62,7 +63,9 @@ radbut.addEventListener("click", function () {
   if (radioClass === "music") {
     bigObj.music = radioCheck
   } else if (radioClass === "meetup") {
-    bigObj.meetup = radioCheck
+    let radioValue = radioCheck.split("&")
+    bigObj.meetup = radioValue[0]
+    bigObj.meetup_url = radioValue[1]
   } else if (radioClass === "park") {
     bigObj.park = radioCheck
   } else if (radioClass === "food") {
@@ -71,7 +74,8 @@ radbut.addEventListener("click", function () {
   localJson(bigObj);
   mainFetch();
   buildClear();
-  returnSearch()
+  returnSearch();
+  bigObj = {};
   })
 
 // BACK BUTTON
@@ -85,16 +89,50 @@ backButtonMagic.addEventListener("click", function() {
 
 // ___________________Itinerary Buttons___________________
 // CLEAR BUTTON: Clear out our itinerary
-let clearButton = document.getElementById("button_clear");
-clearButton.addEventListener("click", function () {
+let clearFunction = () => {
   let clearObj = {
     music: "",
     park: "",
     meetup: "",
     food: "",
+    meetup_url: ""
     }
   localJson(clearObj);
   buildClear()
   mainFetch()
+}
+let clearButton = document.getElementById("button_clear");
+clearButton.addEventListener("click", () => {
+  clearFunction()
 })
 
+
+// Save Button now post a new itinerary to json
+let saveItinButton = document.getElementById("button_itinerary_save");
+
+saveItinButton.addEventListener("click", () => {
+    newFetch().then (newdata => {
+    let saveObj = {
+    music: newdata[0].music,
+    park: newdata[0].park,
+    meetup: newdata[0].meetup,
+    food: newdata[0].food,
+    meetup_url: newdata[0].meetup_url,
+    name: document.getElementById("itinerary_name").value
+    }
+  postJson(saveObj);
+  clearFunction();
+  document.getElementById("itinerary_name").value = "Name Your Itinerary";
+  
+})})
+
+
+
+// View Button
+let savedTarget = document.getElementById("select_itinerary");
+let viewButton = document.getElementById("button_view");
+
+viewButton.addEventListener("click", () =>{
+  let clickValue = savedTarget.options[savedTarget.selectedIndex].value
+  viewSavedJson(clickValue);
+})
