@@ -15,6 +15,15 @@ let mainFetch = function () {
 }
 
 
+let newFetch = function () {
+  return fetch(`http://localhost:8088/my_itinerary`, {
+      headers: {
+        "Content-Type": "application/json",
+      }
+    }).then(data => data.json())
+    
+}
+
 
 mainFetch()
 // sends new info to json

@@ -108,19 +108,20 @@ clearButton.addEventListener("click", () => {
 let saveItinButton = document.getElementById("button_itinerary_save");
 
 saveItinButton.addEventListener("click", () => {
+    newFetch().then (newdata => {
     let saveObj = {
-    music: jsonFact[0].music,
-    park: jsonFact[0].park,
-    meetup: jsonFact[0].meetup,
-    food: jsonFact[0].food,
-    meetup_url: jsonFact[0].meetup_url,
+    music: newdata[0].music,
+    park: newdata[0].park,
+    meetup: newdata[0].meetup,
+    food: newdata[0].food,
+    meetup_url: newdata[0].meetup_url,
     name: document.getElementById("itinerary_name").value
     }
   postJson(saveObj);
   clearFunction();
   document.getElementById("itinerary_name").value = "Name Your Itinerary";
   
-})
+})})
 
 
 
