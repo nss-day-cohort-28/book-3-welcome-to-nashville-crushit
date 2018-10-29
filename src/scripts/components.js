@@ -9,6 +9,7 @@ let builtElements = "";
 // Resets builtElement to empty and clears inner HTML of the target div for search results
 let buildClear = () => { 
   builtElements = "";
+  builtMeetupElements = "";
   searchResultSpot.innerHTML = null;
 }
 // Builds divs of results
@@ -19,10 +20,15 @@ let elementBuilder = (data1, data2, newClass) => {
     </div>`;
 }
 
+// Special builder for meetup info.
+let builtMeetupElements = "";
 
-// __________________Itinerary Build________________________________
-// the place we are inserting the itinerary into the dom
-const findItinerary = document.getElementById("itinerary_target");
+let elementMeetupBuilder = (data1, data2, newClass) => {
+  builtMeetupElements +=
+   `<div class = "radio">
+      <input class=${newClass} type="radio" name="result" value="${data1}&${data2}"><a href="${data2}" target="_blank">${data1}</a>
+    </div>`;
+}
 
 let itineraryDivClear = () => {
   findItinerary.innerHTML = null;
@@ -34,7 +40,7 @@ let itineraryBuilder = (jsonObj) => {
   let itinDiv = `<div class = "inserted">
     <h3>Music: ${jsonObj.music}</h3>
     <h3>Park: ${jsonObj.park}</h3>
-    <h3>Meetup: ${jsonObj.meetup}</h3>
+    <h3>Meetup: <a href=${jsonObj.meetup_url}>${jsonObj.meetup}</a></h3>
     <h3>Food: ${jsonObj.food}</h3>
   </div>`;
   return itinDiv;
