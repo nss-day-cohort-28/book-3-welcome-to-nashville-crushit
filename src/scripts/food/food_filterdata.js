@@ -6,6 +6,7 @@ const foodFilter = (foodObj) => {
 
 // Loop through my array and collect the name and location of each restaurant. T
 const foodArrayLoop = (newArray) => {
+  buildClear();
   for (let i = 0; i<5; i++) {
     let restName = newArray[i].restaurant.name;
     let restLocation = newArray[i].restaurant.location.address;
