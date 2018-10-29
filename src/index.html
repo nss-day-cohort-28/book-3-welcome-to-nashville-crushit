@@ -55,7 +55,7 @@
     <h2>Select:</h2>
     <div id="search_radios">
     </div>
-    
+
     <div id="search_buttons">
     </div>
     <button id="button_save">Save</button>
@@ -65,11 +65,22 @@
 
   <div id="itinerary" class="show">
     <h2>My Itinerary</h2>
+    <input id = "itinerary_name" type ="text" name = "Itinerary Name Submit" value = "Name Your Itinerary">
     <div id="itinerary_target">
     </div>
+    <button id="button_itinerary_save">Save</button>
     <button id="button_clear">Clear</button>
   </div>
 
+  <div>
+    <h2>Saved Itineraries</h2>
+    
+    <select id="select_itinerary">
+       
+    </select>
+    <button id = "button_view">View</button>
+    <div id="saved_itinerary"></div>
+   
   </div>
 
   <script src="scripts/parks/parks_filterdata.js"></script>
