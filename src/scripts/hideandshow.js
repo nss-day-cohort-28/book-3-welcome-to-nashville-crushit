@@ -16,10 +16,3 @@ let returnSearch = function() {
   resultsSection.className = "hidden"
 }
 
-// back button
-let backButtonMagic = document.getElementById("button_back");
-
-// back button actually refreshes the browser to clear our dom of searches
-backButtonMagic.addEventListener("click", function() {
-   window.location.reload();
-})

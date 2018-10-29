@@ -1,4 +1,5 @@
 function accessEventInfo(eventar)  {
+  buildClear();
   // Creates user interaction if no events exist of selected type for current day.
   if (eventar.length === 0) {
     alert("No events of that type today. Search again.")

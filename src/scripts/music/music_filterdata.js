@@ -7,6 +7,7 @@ let musicFilter = (musicObject) => {
 
 
 let musicEventLoop = (array) => {
+  buildClear();
   for (i=0; i<5; i++) {
     let artist = array[i].performance[0].displayName;
     let venue = array[i].venue.displayName;
