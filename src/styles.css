@@ -4,9 +4,21 @@
 } */
 
 h1{
+  display: flex;
+  justify-content: center;
   font-family: 'Grand Hotel', cursive;
   font-size: 54px;
   font-style:  italic;
+}
+
+.border {
+  border-left: 2px solid black; 
+}
+
+.div_body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .search_section {
