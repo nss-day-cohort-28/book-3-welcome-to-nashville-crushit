@@ -4,7 +4,7 @@ function accessEventInfo(eventar)  {
     buildClear();
     builtMeetupElements +=
     `<div>
-      There are no upcoming meetups listed for this date! 
+      There are no meetups of that type today! 
      </div>`;
   } else
   buildClear();
