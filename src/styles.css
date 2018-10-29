@@ -19,11 +19,20 @@ h1{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  border-bottom: 2px solid black;
 }
 
 .search_section {
   display: flex;
   flex-direction: column;
+}
+
+.center {
+  margin: 15px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  font-display: center;
 }
 
 select {
