@@ -74,7 +74,8 @@ radbut.addEventListener("click", function () {
   localJson(bigObj);
   mainFetch();
   buildClear();
-  returnSearch()
+  returnSearch();
+  bigObj = {};
   })
 
 // BACK BUTTON

@@ -7,6 +7,7 @@ let mainFetch = function () {
       }
     }).then(data => data.json())
     .then((data) => {
+      buildClear();
       injectItinerary(data);
       buildSavedItineray(data);
     })
