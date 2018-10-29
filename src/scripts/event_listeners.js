@@ -1,3 +1,8 @@
+// all event listeners
+
+
+// _________Search Buttons_____________
+
 // grabs the spots needed in html for food
 let foodButton = document.getElementById("food_button")
 let foodSelection = document.getElementById("section_food");
@@ -47,7 +52,9 @@ meetupButton.addEventListener("click", function() {
 })
 
 
-// decides what key in json gets updated
+// __________________Results Buttons_______________
+
+// SAVE BUTTON: and decides what key in json gets updated
 let radbut = document.getElementById("button_save")
 let bigObj = {}
 radbut.addEventListener("click", function () {
@@ -63,11 +70,22 @@ radbut.addEventListener("click", function () {
     bigObj.food = radioCheck
   }
   localJson(bigObj);
-  window.location.reload();
+  mainFetch();
+  buildClear();
+  returnSearch()
+  })
+
+// BACK BUTTON
+let backButtonMagic = document.getElementById("button_back");
+
+backButtonMagic.addEventListener("click", function() {
+  buildClear()
+  returnSearch();
 })
 
 
-// Clear out our itinerary
+// ___________________Itinerary Buttons___________________
+// CLEAR BUTTON: Clear out our itinerary
 let clearButton = document.getElementById("button_clear");
 clearButton.addEventListener("click", function () {
   let clearObj = {
@@ -77,6 +95,7 @@ clearButton.addEventListener("click", function () {
     food: "",
     }
   localJson(clearObj);
-  window.location.reload();
+  buildClear()
+  mainFetch()
 })
 
