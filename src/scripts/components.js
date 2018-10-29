@@ -40,7 +40,7 @@ let itineraryBuilder = (jsonObj) => {
   let itinDiv = `<div class = "inserted">
     <h3 id = "itinerary_music">Music: ${jsonObj[0].music}</h3>
     <h3 id = "itinerary_park">Park: ${jsonObj[0].park}</h3>
-    <h3 id = "itinerary_meetup">Meetup: <a href=${jsonObj[0].meetup_url}>${jsonObj[0].meetup}</a></h3>
+    <h3 id = "itinerary_meetup">Meetup: <a href=${jsonObj[0].meetup_url} target="_blank">${jsonObj[0].meetup}</a></h3>
     <h3 id = "itinerary_food">Food: ${jsonObj[0].food}</h3>
   </div>`;
   return itinDiv;
@@ -60,7 +60,7 @@ let savedItineraryBuilder = (jsonObj) => {
   let itinDiv = `<div class = "inserted">
     <h3 id = "itinerary_music">Music: ${jsonObj.music}</h3>
     <h3 id = "itinerary_park">Park: ${jsonObj.park}</h3>
-    <h3 id = "itinerary_meetup">Meetup: <a href=${jsonObj.meetup_url}>${jsonObj.meetup}</a></h3>
+    <h3 id = "itinerary_meetup">Meetup: <a href=${jsonObj.meetup_url} target="_blank">${jsonObj.meetup}</a></h3>
     <h3 id = "itinerary_food">Food: ${jsonObj.food}</h3>
   </div>`;
   return itinDiv;
