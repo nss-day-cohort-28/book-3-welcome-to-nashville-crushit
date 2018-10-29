@@ -9,6 +9,7 @@ let builtElements = "";
 // Resets builtElement to empty and clears inner HTML of the target div for search results
 let buildClear = () => { 
   builtElements = "";
+  builtMeetupElements = "";
   searchResultSpot.innerHTML = null;
 }
 // Builds divs of results
@@ -21,6 +22,7 @@ let elementBuilder = (data1, data2, newClass) => {
 
 // Special builder for meetup info.
 let builtMeetupElements = "";
+
 let elementMeetupBuilder = (data1, data2, newClass) => {
   builtMeetupElements +=
    `<div class = "radio">
